@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Alquiler de Castillos y Juegos Infantiles</title>
+    <style>
+        /* Reset y variables */
+        :root {
+            --primary: #7c3aed;
+            --primary-light: rgba(124, 58, 237, 0.2);
+            --background: #ffffff;
+            --foreground: #0f172a;
+            --muted: #f1f5f9;
+            --muted-foreground: #64748b;
+            --border: #e2e8f0;
+            --radius: 0.75rem;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--foreground);
+            background-color: var(--background);
+            line-height: 1.5;
+        }
+
+        /* Contenedores */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Tipografía */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: var(--muted-foreground);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: var(--background);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .logo-icon {
+            color: var(--primary);
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--foreground);
+            border: 1px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--muted);
+        }
+
+        .btn-link {
+            background: none;
+            color: var(--primary);
+            padding: 0;
+            border: none;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .btn-lg {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Secciones */
+        section {
+            padding: 3rem 0;
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, var(--primary-light), var(--background));
+            padding: 3rem 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 24rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 28rem;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .about {
+            background-color: var(--muted);
+        }
+
+        .about-content {
+            max-width: 42rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Productos */
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .product-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background-color: var(--background);
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 0;
+            padding-bottom: 66.67%; /* Aspect ratio 3:2 */
+            position: relative;
+            background-color: #f0f0f0;
+        }
+
+        .product-content {
+            padding: 1rem;
+        }
+
+        /* Testimonios */
+        .testimonials {
+            background-color: var(--muted);
+        }
+
+        .testimonial-carousel {
+            max-width: 28rem;
+            margin: 2.5rem auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            background-color: var(--background);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .promo-box {
+            background-color: var(--primary-light);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .promo-code {
+            display: inline-block;
+            background-color: var(--background);
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            margin: 0 0.25rem;
+        }
+
+        /* Formulario de contacto */
+        .contact-form {
+            max-width: 28rem;
+            margin: 2rem auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background-color: var(--background);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        textarea {
+            min-height: 7.5rem;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--muted);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            margin-top: 0.25rem;
+        }
+
+        .footer-links a {
+            color: var(--foreground);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            margin: 0 0.5rem;
+        }
+
+        /* Responsive */
+        @media (min-width: 640px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-icon">♜</span>
+                <span>Nombre real</span>
+            </div>
+            <a href="#contacto" class="btn btn-outline btn-icon">
+                <span>📞</span>
+                <span>Contactar</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>¡Diversión Garantizada para tu Evento Infantil!</h1>
+                <p class="text-muted">
+                    Castillos inflables, juegos y más para hacer inolvidable la fiesta de tus pequeños
+                </p>
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn btn-primary btn-lg btn-icon">
+                        <span>🎉</span>
+                        <span>Ver Catálogo</span>
+                    </a>
+                    <a href="#contacto" class="btn btn-outline btn-lg">
+                        Solicitar Presupuesto
+                    </a>
+                </div>
+                <img src="https://via.placeholder.com/800x600" alt=" va imagen de Castillo " class="hero-image">
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about">
+            <div class="container">
+                <h2>Quiénes Somos</h2>
+                <div class="about-content">
+                    <p>
+                        En <strong style="color: var(--primary);">CastilloFeliz</strong> nos dedicamos a crear momentos mágicos para los más pequeños desde hace más de 10 años.
+                    </p>
+                    <p>
+                        Contamos con los mejores castillos inflables, juegos y animaciones para hacer de tu evento una experiencia inolvidable, siempre con la máxima seguridad y calidad.
+                    </p>
+                </div>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">★</div>
+                        <h3>Calidad Premium</h3>
+                        <p class="text-muted">
+                            Todos nuestros productos cumplen con los más altos estándares de calidad y seguridad.
+                        </p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Puntualidad</h3>
+                        <p class="text-muted">
+                            Garantizamos la entrega e instalación a tiempo para que tu evento comience sin contratiempos.
+                        </p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📍</div>
+                        <h3>Cobertura Total</h3>
+                        <p class="text-muted">
+                            Servicio en toda la ciudad y alrededores para llevar diversión donde la necesites.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="productos">
+            <div class="container">
+                <h2>Nuestros Productos</h2>
+                <p class="text-center text-muted" style="max-width: 42rem; margin: 1rem auto;">
+                    Contamos con una amplia variedad de opciones para hacer de tu evento algo especial
+                </p>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <!-- Placeholder para imagen -->
+                        </div>
+                        <div class="product-content">
+                            <h3>Castillos Inflables</h3>
+                            <p class="text-muted">
+                                Diferentes tamaños y temáticas para todas las edades y espacios.
+                            </p>
+                            <a href="#" class="btn-link">Ver opciones</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <!-- Placeholder para imagen -->
+                        </div>
+                        <div class="product-content">
+                            <h3>Toboganes Acuáticos</h3>
+                            <p class="text-muted">
+                                Perfectos para días calurosos y fiestas de verano.
+                            </p>
+                            <a href="#" class="btn-link">Ver opciones</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <!-- Placeholder para imagen -->
+                        </div>
+                        <div class="product-content">
+                            <h3>Juegos Interactivos</h3>
+                            <p class="text-muted">
+                                Actividades divertidas para entretener a niños de todas las edades.
+                            </p>
+                            <a href="#" class="btn-link">Ver opciones</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <!-- Placeholder para imagen -->
+                        </div>
+                        <div class="product-content">
+                            <h3>Máquinas de Snacks</h3>
+                            <p class="text-muted">
+                                Algodón de azúcar, palomitas y más para complementar tu evento.
+                            </p>
+                            <a href="#" class="btn-link">Ver opciones</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center" style="margin-top: 2.5rem;">
+                    <a href="#" class="btn btn-primary btn-lg">Ver Catálogo Completo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <!-- <section class="testimonials">
+            <div class="container">
+                <h2>Lo Que Dicen Nuestros Clientes</h2>
+                
+                <div class="testimonial-carousel">
+                    <div class="testimonial-slide">
+                        <div class="stars">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 1rem;">
+                            "¡El castillo fue la sensación de la fiesta! Los niños no querían salir y el servicio fue excelente."
+                        </p>
+                        <p style="font-weight: 500;">María García</p>
+                        <p class="text-muted" style="font-size: 0.875rem;">Fiesta de cumpleaños</p>
+                    </div>
+                </div>
+                
+                <div class="promo-box">
+                    <h3>¡Sorpresa para tu Evento!</h3>
+                    <p>
+                        Menciona el código <span class="promo-code">FELIZ10</span> al reservar y obtén un 10% de descuento en tu primer alquiler.
+                    </p>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Contact Form -->
+        <!-- <section id="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <p class="text-center text-muted" style="max-width: 42rem; margin: 1rem auto;">
+                    Estamos listos para hacer de tu evento algo especial. ¡Escríbenos y te responderemos a la brevedad!
+                </p>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" placeholder="Tu teléfono">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="tucorreo@ejemplo.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" placeholder="Cuéntanos sobre tu evento, fecha y lo que necesitas"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section> -->
+    </main>
+
+    <!-- Footer -->
+    <!-- <footer>
+        <div class="container footer-container">
+            <div class="logo">
+                <span class="logo-icon">♜</span>
+                <span>CastilloFeliz</span>
+            </div>
+            <div class="text-muted" style="text-align: center;">
+                <p>© <script>document.write(new Date().getFullYear())</script> CastilloFeliz. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+</body>
+</html> 
