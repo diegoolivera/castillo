@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
     <title> Alquiler de Castillos y Juegos Infantiles</title>
     <style>
         /* Reset y variables */
@@ -17,6 +21,17 @@
             --radius: 0.75rem;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+            --color-primario: #ff6b6b;
+            --color-secundario: #4ecdc4;
+            --color-acento: #ffe66d;
+            --color-texto: #2d334a;
+            --color-texto-claro: #6c757d;
+            --color-fondo: #ffffff;
+            --color-fondo-alt: #f8f9fa;
+            --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radio: 8px;
+            --transicion: all 0.3s ease;
         }
 
         * {
@@ -26,7 +41,7 @@
         }
 
         body {
-            font-family: var(--font-sans);
+            font-family: 'Nunito', sans-serif;
             color: var(--foreground);
             background-color: var(--background);
             line-height: 1.5;
@@ -41,7 +56,12 @@
         }
 
         /* Tipografía */
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-weight: 700;
             line-height: 1.2;
         }
@@ -101,7 +121,10 @@
         }
 
         .logo-icon {
-            color: var(--primary);
+            background: linear-gradient(to right, yellow, lightgreen, violet, lightskyblue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
         }
 
         /* Botones */
@@ -163,8 +186,8 @@
         }
 
         .hero {
-            background: linear-gradient(to bottom, var(--primary-light), var(--background));
-            padding: 3rem 0;
+            /* background: linear-gradient(to bottom, var(--primary-light), var(--background)); */
+            /* padding: 3rem 0; */
             overflow: hidden;
         }
 
@@ -194,7 +217,7 @@
         }
 
         .about {
-            background-color: var(--muted);
+            /* background-color: var(--muted); */
         }
 
         .about-content {
@@ -250,7 +273,8 @@
         .product-image {
             width: 100%;
             height: 0;
-            padding-bottom: 66.67%; /* Aspect ratio 3:2 */
+            padding-bottom: 66.67%;
+            /* Aspect ratio 3:2 */
             position: relative;
             background-color: #f0f0f0;
         }
@@ -328,7 +352,8 @@
             margin-bottom: 0.5rem;
         }
 
-        input, textarea {
+        input,
+        textarea {
             width: 100%;
             padding: 0.5rem 0.75rem;
             border: 1px solid var(--border);
@@ -368,6 +393,162 @@
             margin: 0 0.5rem;
         }
 
+
+        .mf-titulo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff3399;
+        }
+
+        .mf-contenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin: 20px 0;
+        }
+
+        .mf-letra {
+            font-size: 32px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 60px;
+            color: black;
+            border-radius: 5px;
+        }
+
+        .mf-colores {
+            background-color: yellow;
+        }
+
+        .mf-verde {
+            background-color: lightgreen;
+        }
+
+        .mf-rosa {
+            background-color: violet;
+        }
+
+        .mf-naranja {
+            background-color: orange;
+        }
+
+        .mf-azul {
+            background-color: lightskyblue;
+        }
+
+        .mf-rojo {
+            background-color: red;
+            color: white;
+        }
+
+        .mf-subtitulo {
+            font-size: 20px;
+            color: green;
+        }
+
+        .hero-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .mf-footer {
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .mf-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .mf-footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mf-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .mf-logo-icon {
+            font-size: 24px;
+        }
+
+        .mf-follow-us {
+            font-size: 16px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .mf-social-media {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mf-social-icon {
+            font-size: 24px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .mf-social-icon.mf-instagram:hover {
+            color: #E1306C;
+        }
+
+        .mf-social-icon.mf-facebook:hover {
+            color: #1877F2;
+        }
+
+        /* Destacado */
+        .destacado {
+            /* background-color: var(--color-fondo-alt); */
+            text-align: center;
+        }
+
+        .destacado h2 {
+            margin-bottom: 3rem;
+        }
+
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .beneficio {
+            padding: 1.5rem;
+            background-color: var(--color-fondo);
+            border-radius: var(--radio);
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+        }
+
+        .beneficio:hover {
+            transform: translateY(-5px);
+        }
+
+        .iconoDestacado {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+
+
         /* Responsive */
         @media (min-width: 640px) {
             h1 {
@@ -398,25 +579,27 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
                 <span class="logo-icon">♜</span>
-                <span>Nombre real</span>
+                <span style="font-family: cursive;font-weight: 500;">Momentos felices</span>
             </div>
-            <a href="#contacto" class="btn btn-outline btn-icon">
-                <span>📞</span>
+            <a href="https://wa.me/5493517885172" class="btn btn-outline btn-icon">
+                <i class="fab fa-whatsapp"></i>
                 <span>Contactar</span>
             </a>
+
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-content">
+        <section class="hero" style="padding: 0 1rem;">
+            <!-- <div class="container hero-content">
                 <h1>¡Diversión Garantizada para tu Evento Infantil!</h1>
                 <p class="text-muted">
                     Castillos inflables, juegos y más para hacer inolvidable la fiesta de tus pequeños
@@ -431,44 +614,84 @@
                     </a>
                 </div>
                 <img src="https://via.placeholder.com/800x600" alt=" va imagen de Castillo " class="hero-image">
+            </div> -->
+            <!-- <div class="container hero-content">
+                <div class="mf-titulo">MOMENTOS</div>
+                <div class="mf-contenedor">
+                    <div class="mf-letra mf-colores">F</div>
+                    <div class="mf-letra mf-verde">E</div>
+                    <div class="mf-letra mf-rosa">L</div>
+                    <div class="mf-letra mf-naranja">I</div>
+                    <div class="mf-letra mf-azul">C</div>
+                    <div class="mf-letra mf-rojo">E</div>
+                    <div class="mf-letra mf-naranja">S</div>
+                </div>
+                <div class="mf-subtitulo">ALQUILER DE JUEGOS</div>
+            </div> -->
+
+            <!-- <div class="hero-content">
+                <img src="./img/momentosFelices.jpeg" alt="logo momentos felices">
+            </div> -->
+
+            <div class="hero-content">
+                <img src="./img/momentosFelices.jpeg" alt="logo momentos felices">
+                <div class="hero-text"
+                    style="display: flex;align-items: center; justify-content: center; flex-direction: column;">
+                    <h1 style="font-family: cursive;font-weight: 300;">¡Diversión Garantizada para tu Evento Infantil!
+                    </h1>
+                    <p class="text-muted">Castillos inflables, juegos y más para hacer inolvidable la fiesta de tus
+                        pequeños</p>
+                    <div class="hero-buttons">
+                        <a href="/catalogo.html" class="btn btn-primary btn-lg" style="background-color: #ADD8E6;">🎉 Ver Catálogo</a>
+                        <a href="#contacto" class="btn btn-outline btn-lg">Solicitar Reserva</a>
+                    </div>
+                </div>
+            
             </div>
+
         </section>
 
         <!-- About Us Section -->
-        <section class="about">
+        <section class="about" style="padding: 1rem 0;">
             <div class="container">
                 <h2>Quiénes Somos</h2>
-                <div class="about-content">
+                <div class="about-content" >
                     <p>
-                        En <strong style="color: var(--primary);">CastilloFeliz</strong> nos dedicamos a crear momentos mágicos para los más pequeños desde hace más de 10 años.
+                        En <strong style="color: var(--primary);">Momentos felices</strong> nos dedicamos a crear
+                        momentos
+                        mágicos para los más pequeños desde hace más de 5 años.
                     </p>
                     <p>
-                        Contamos con los mejores castillos inflables, juegos y animaciones para hacer de tu evento una experiencia inolvidable, siempre con la máxima seguridad y calidad.
+                        Contamos con los mejores castillos inflables, juegos y decoraciones para hacer de tu evento una
+                        experiencia inolvidable, siempre con la máxima seguridad y calidad.
                     </p>
                 </div>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-icon">★</div>
-                        <h3>Calidad Premium</h3>
-                        <p class="text-muted">
-                            Todos nuestros productos cumplen con los más altos estándares de calidad y seguridad.
-                        </p>
+                
+                <section class="destacado" style="padding: 1rem 0;">
+                    <div class="container">
+                        <h2>¿Por qué elegir nuestros juegos?</h2>
+                        <div class="beneficios">
+                            <div class="beneficio">
+                                <div class="iconoDestacado">🛡️</div>
+                                <h3>Seguridad</h3>
+                                <p>Todos nuestros productos cumplen con las normativas de seguridad infantil.</p>
+                            </div>
+                            <div class="beneficio">
+                                <div class="iconoDestacado">⏰</div>
+                                <h3>Puntualidad</h3>
+                                <p> Garantizamos la entrega e instalación a tiempo para que tu evento comience sin
+                                    contratiempos.</p>
+                            </div>
+                            <div class="beneficio">
+                                <div class="iconoDestacado">📍</div>
+                                <h3>Cobertura</h3>
+                                <p>Servicio en toda la ciudad y alrededores para llevar diversión donde la necesites.</p>
+                            </div>
+                           
+                        </div>
                     </div>
-                    <div class="feature">
-                        <div class="feature-icon">⏰</div>
-                        <h3>Puntualidad</h3>
-                        <p class="text-muted">
-                            Garantizamos la entrega e instalación a tiempo para que tu evento comience sin contratiempos.
-                        </p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">📍</div>
-                        <h3>Cobertura Total</h3>
-                        <p class="text-muted">
-                            Servicio en toda la ciudad y alrededores para llevar diversión donde la necesites.
-                        </p>
-                    </div>
-                </div>
+                </section>
+
             </div>
         </section>
 
@@ -479,7 +702,7 @@
                 <p class="text-center text-muted" style="max-width: 42rem; margin: 1rem auto;">
                     Contamos con una amplia variedad de opciones para hacer de tu evento algo especial
                 </p>
-                
+
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-image">
@@ -490,10 +713,10 @@
                             <p class="text-muted">
                                 Diferentes tamaños y temáticas para todas las edades y espacios.
                             </p>
-                            <a href="#" class="btn-link">Ver opciones</a>
+                           
                         </div>
                     </div>
-                    
+
                     <div class="product-card">
                         <div class="product-image">
                             <!-- Placeholder para imagen -->
@@ -503,10 +726,10 @@
                             <p class="text-muted">
                                 Perfectos para días calurosos y fiestas de verano.
                             </p>
-                            <a href="#" class="btn-link">Ver opciones</a>
+                            
                         </div>
                     </div>
-                    
+
                     <div class="product-card">
                         <div class="product-image">
                             <!-- Placeholder para imagen -->
@@ -516,106 +739,50 @@
                             <p class="text-muted">
                                 Actividades divertidas para entretener a niños de todas las edades.
                             </p>
-                            <a href="#" class="btn-link">Ver opciones</a>
+                           
                         </div>
                     </div>
+
                     
-                    <div class="product-card">
-                        <div class="product-image">
-                            <!-- Placeholder para imagen -->
-                        </div>
-                        <div class="product-content">
-                            <h3>Máquinas de Snacks</h3>
-                            <p class="text-muted">
-                                Algodón de azúcar, palomitas y más para complementar tu evento.
-                            </p>
-                            <a href="#" class="btn-link">Ver opciones</a>
-                        </div>
-                    </div>
                 </div>
-                
-                <div class="text-center" style="margin-top: 2.5rem;">
-                    <a href="#" class="btn btn-primary btn-lg">Ver Catálogo Completo</a>
+
+                <div class="text-center" style="margin-top: 2.5rem; " >
+                    <a href="/catalogo.html" class="btn btn-primary btn-lg" style="background-color: #FFDAB9;">🎉 Ver Catálogo Completo</a>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <!-- <section class="testimonials">
-            <div class="container">
-                <h2>Lo Que Dicen Nuestros Clientes</h2>
-                
-                <div class="testimonial-carousel">
-                    <div class="testimonial-slide">
-                        <div class="stars">★★★★★</div>
-                        <p style="font-style: italic; margin-bottom: 1rem;">
-                            "¡El castillo fue la sensación de la fiesta! Los niños no querían salir y el servicio fue excelente."
-                        </p>
-                        <p style="font-weight: 500;">María García</p>
-                        <p class="text-muted" style="font-size: 0.875rem;">Fiesta de cumpleaños</p>
-                    </div>
-                </div>
-                
-                <div class="promo-box">
-                    <h3>¡Sorpresa para tu Evento!</h3>
-                    <p>
-                        Menciona el código <span class="promo-code">FELIZ10</span> al reservar y obtén un 10% de descuento en tu primer alquiler.
-                    </p>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- Contact Form -->
-        <!-- <section id="contacto">
-            <div class="container">
-                <h2>Contáctanos</h2>
-                <p class="text-center text-muted" style="max-width: 42rem; margin: 1rem auto;">
-                    Estamos listos para hacer de tu evento algo especial. ¡Escríbenos y te responderemos a la brevedad!
-                </p>
-                
-                <form class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Teléfono</label>
-                            <input type="tel" id="phone" placeholder="Tu teléfono">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" placeholder="tucorreo@ejemplo.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" placeholder="Cuéntanos sobre tu evento, fecha y lo que necesitas"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
-                </form>
-            </div>
-        </section> -->
+    
+       
     </main>
 
     <!-- Footer -->
-    <!-- <footer>
-        <div class="container footer-container">
-            <div class="logo">
-                <span class="logo-icon">♜</span>
-                <span>CastilloFeliz</span>
-            </div>
-            <div class="text-muted" style="text-align: center;">
-                <p>© <script>document.write(new Date().getFullYear())</script> CastilloFeliz. Todos los derechos reservados.</p>
-                <div class="footer-links">
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Términos y Condiciones</a>
+    <footer class="mf-footer">
+        <div class="mf-container">
+            <div class="mf-footer-content">
+                <div class="mf-footer-text">
+                    <div class="mf-logo">
+                        <span class="logo-icon" style="font-weight: 500;">♜</span>
+                        <span class="mf-logo-title">Momentos Felices</span>
+                    </div>
+                    <span class="mf-follow-us">📢 ¡Síguenos en nuestras redes!</span>
+                </div>
+                <div class="mf-social-media">
+                    <a href="https://www.instagram.com/" target="_blank" class="mf-social-icon mf-instagram"
+                        aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" class="mf-social-icon mf-facebook"
+                        aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
+
+
+
 </body>
-</html> 
+
+</html>
