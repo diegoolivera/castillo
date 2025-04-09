@@ -380,6 +380,473 @@ footer {
     flex-wrap: wrap;
 }
 
+/* ------------------------ */
+
+.card2-container {
+    background-color: #e1f3ec;
+    border-radius: 16px;
+    margin: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card2-image {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+  }
+
+  .card2-content {
+    width: 100%;
+  }
+
+  .card2-content ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 16px;
+  }
+
+  .card2-content li {
+    color: #2d334a;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .card2-title {
+    font-size: 16px;
+    font-weight: 900;
+    color: #054a5c;
+  }
+
+  .card2-subtitle {
+    font-size: 22px;
+    font-weight: 900;
+    color: #026073;
+    margin-bottom: 12px;
+  }
+
+  .card2-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #026073;
+  }
+
+  .card2-note {
+    font-size: 12px;
+    color: #6c757d;
+  }
+
+  /* card 3 */
+
+  .card3-container {
+    background: linear-gradient(145deg, #eafaf7, #d4f2e9);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card3-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  }
+
+  .card3-title {
+    color: #008080;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .card3-subtitle {
+    font-size: 22px;
+    color: #045b6c;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .card3-price {
+    font-size: 20px;
+    color: #2d334a;
+    font-weight: bold;
+  }
+
+  .card3-list {
+    text-align: left;
+    margin: 12px 0;
+    padding: 0;
+    list-style: none;
+    color: #2d334a;
+    font-size: 13px;
+  }
+
+  .card3-note {
+    font-size: 11px;
+    color: #6c757d;
+  }
+
+  /* card4 */
+
+  .card4-container {
+    border: 2px solid #dce9e6;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px;
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card4-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 14px;
+  }
+
+  .card4-title {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .card4-subtitle {
+    font-size: 24px;
+    font-weight: 900;
+    color: #017373;
+    margin-bottom: 10px;
+  }
+
+  .card4-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+  }
+
+  .card4-list {
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    color: #444;
+    margin: 12px 0;
+  }
+
+  .card4-note {
+    font-size: 12px;
+    color: #999;
+  }
+
+  /* card 5 */
+
+  .card5-container {
+    background-color: #f0fbf7;
+    border-radius: 20px;
+    margin: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0, 128, 128, 0.15);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card5-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+  .card5-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #056674;
+    text-align: center;
+  }
+
+  .card5-subtitle {
+    font-size: 24px;
+    font-weight: 900;
+    color: #023e4c;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .card5-price {
+    font-size: 20px;
+    color: #009688;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .card5-list {
+    padding-left: 0;
+    list-style: none;
+    font-size: 13px;
+    color: #333;
+  }
+
+  .card5-note {
+    font-size: 11px;
+    color: #555;
+  }
+
+
+  /* card6 */
+
+  .card6-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 16px;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 100%;
+  }
+  
+  .card6-acento {
+    width: 10px;
+    background: linear-gradient(to bottom, #ff6b6b, #4ecdc4);
+  }
+  
+  .card6-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .card6-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .card6-info {
+    padding: 16px;
+  }
+  
+  .card6-title {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+  }
+  
+  .card6-subtitle {
+    font-size: 24px;
+    font-weight: 900;
+    color: #2d334a;
+    margin: 0 0 12px 0;
+  }
+  
+  .card6-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    color: #2d334a;
+  }
+  
+  .card6-list li {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .card6-note {
+    font-size: 11px;
+    color: #6c757d;
+    margin-bottom: 12px;
+  }
+  
+  .card6-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #009688;
+  }
+  
+
+  /* card 7 */
+
+  .card7 {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 95%;
+    margin: 20px auto;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .card7-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .card7-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card7-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2d334a;
+    margin-bottom: 10px;
+  }
+  
+  .card7-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #009688;
+    margin-bottom: 20px;
+  }
+  
+  .card7-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .card7-list li {
+    margin-bottom: 6px;
+  }
+  
+  .card7-note {
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 20px;
+  }
+  
+  .card7-button {
+    display: inline-block;
+    background-color: #4ecdc4;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card7-button:hover {
+    background-color: #38b9af;
+  }
+  
+
+  /* slogan  */
+
+  .promo-container {
+    background-color: #fffaf0;
+    border: 3px dashed #ffa500;
+    border-radius: 16px;
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .promo-container h1 {
+    color: #ff6600;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .promo-container p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+  }
+
+  .highlight {
+    color: #e53935;
+    font-weight: bold;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+
+  /* slogan 1 */
+
+  .slogan-1 {
+    background: linear-gradient(to right, #ff9a00, #ff6f00);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* slogan 2 */
+
+  .slogan-2 {
+    background-color: #fff8e1;
+    color: #d84315;
+    border: 2px solid #ffc107;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+
+  /* slogan 3 */
+
+  .slogan-3 {
+    background-color: #f9f9ff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #444;
+    font-size: 1.3rem;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  .slogan-3 .bold {
+    font-weight: bold;
+    color: #5c6bc0;
+  }
+  
+  .slogan-3 .highlight {
+    color: #ef5350;
+    font-weight: bold;
+  }
+
+  /* slogan4 */
+
+  .slogan-4 {
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffaa00;
+  }
+  
+  
+  
+
 /* Responsive */
 @media (max-width: 768px) {
     header .container {

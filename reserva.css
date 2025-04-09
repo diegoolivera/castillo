@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9fdfd;
+  }
+  
+  .card-reserva {
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+   
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    color: #007c91;
+    margin-bottom: 1rem;
+  }
+  
+  .lista-reserva {
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .lista-reserva li {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .seccion-info {
+    margin-bottom: 1.5rem;
+  }
+  
+  .seccion-info h2 {
+    color: #007c91;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .seccion-info p,
+  .seccion-info ul li {
+    color: #444;
+    font-size: 0.95rem;
+  }
+  
+  ul {
+    padding-left: 1.2rem;
+  }
+  
+
+  .restricciones ul {
+    padding-left: 1.2rem;
+    list-style: none;
+  }
+  
+  .restricciones li {
+    margin-bottom: 0.5rem;
+    color: #b20000;
+    font-weight: 500;
+  }
+
+  .nota {
+    color: #b20000;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 5px;
+  }
+
+
+  .acciones-reserva {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%;
+  }
+  
+  .btn-confirmar {
+    background-color: #87CEEB ;
+    color: white;
+  }
+  
+  
+  
+  .btn-cancelar {
+    background-color: #f44336;
+    color: white;
+  }
+  
+ 
+  
+  
+  
