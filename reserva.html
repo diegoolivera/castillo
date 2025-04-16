@@ -8,59 +8,79 @@
 </head>
 <body>
   <div class="card-reserva">
-    <h1>Para realizar tu reserva</h1>
-    <p>Necesitamos que nos indiques:</p>
+    <h1>Reserva tu evento 🎉</h1>
+    <form id="formReserva">
+      <label for="nombre">✅ Nombre y apellido</label>
+      <input type="text" id="nombre" name="nombre" required />
 
-    <ul class="lista-reserva">
-      <li>✅ Nombre y apellido</li>
-      <li>✅ Fecha del evento <strong>“confirmada”</strong></li>
-      <li>✅ Dirección del evento</li>
-      <li>✅ Horario del evento</li>
-      <li>✅ Realizar el <strong>10%</strong> del pago total</li>
-    </ul>
+      <label for="fecha">✅ Fecha del evento</label>
+      <input type="date" id="fecha" name="fecha" required />
 
-    <div class="seccion-info">
-      <h2>Tiempo de alquiler</h2>
-      <p>Es equivalente a la duración del evento.</p>
-    </div>
+      <label for="direccion">✅ Dirección del evento</label>
+      <input type="text" id="direccion" name="direccion" required />
 
-    <div class="seccion-info">
-        <h2>Radio de alcance</h2>
-        <p>📍 Córdoba capital y alrededores.</p>
-        <p class="nota">⚠️ Fuera del anillo de circunvalación, consultar por costo de traslado.</p>
-      </div>
-      
-      
+      <label for="hora">✅ Horario del evento</label>
+      <input type="time" id="hora" name="hora" required />
 
-    <div class="seccion-info">
-      <h2>Promoción</h2>
-      <p>Contratando <strong>3 espacios de juegos</strong> obtenés un <strong>10% de descuento</strong>.</p>
-    </div>
-
-    <div class="seccion-info">
-      <h2>Métodos de pago</h2>
-      <ul>
-        <li>💵 Efectivo</li>
-        <li>🏦 Transferencia bancaria</li>
-        <li>💳 Tarjetas de crédito y débito</li>
-      </ul>
-    </div>
+      <p class="info-pago">✅ Recordá: se abona el <strong>10%</strong> para confirmar</p>
+    </form>
   </div>
 
-  <div class="card-reserva seccion-info restricciones">
-    <h2>Condiciones para castillos y peloteros</h2>
+  <div class="card-reserva">
+    <h2>ℹ️ Información adicional</h2>
     <ul>
-      <li>❌ No se puede ingresar con maquillaje artístico, pinturas de cabello en aerosol, témperas, fibras, lapiceras o cualquier producto que pueda manchar el pelotero.</li>
-      <li>❌ No se puede ingresar con calzado.</li>
-      <li>❌ No se coloca sobre tierra directa o escombros.</li>
+      <li>⏱️ El alquiler dura lo mismo que tu evento.</li>
+      <li>📍 Zona: Córdoba capital y alrededores.</li>
+      <li>💰 Promo: 3 juegos = 10% OFF</li>
+    </ul>
+  </div>
+
+  <div class="card-reserva">
+    <h2>💳 Formas de pago</h2>
+    <ul>
+      <li>💵 Efectivo</li>
+      <li>🏦 Transferencia</li>
+      <li>💳 Débito / Crédito</li>
+    </ul>
+  </div>
+
+  <div class="alerta-restricciones">
+    <h3>⚠️ Condiciones</h3>
+    <ul>
+      <li>❌ Sin maquillaje, aerosoles o témperas.</li>
+      <li>❌ Sin calzado dentro del castillo.</li>
+      <li>❌ No se instala sobre tierra o escombros.</li>
     </ul>
   </div>
 
   <div class="acciones-reserva">
-    <button class="btn btn-confirmar"> Continuar con la reserva</button>
-    <button class="btn btn-cancelar" onclick="window.location.href='index.html'"> Cancelar</button>
+    <button class="btn-confirmar" onclick="enviarReserva()">Enviar Reserva</button>
+    <button class="btn-cancelar" onclick="window.location.href='index.html'">Cancelar</button>
   </div>
-  
-  
+
+  <script>
+    function enviarReserva() {
+      const nombre = document.getElementById('nombre').value;
+      const fecha = document.getElementById('fecha').value;
+      const direccion = document.getElementById('direccion').value;
+      const hora = document.getElementById('hora').value;
+
+      if (!nombre || !fecha || !direccion || !hora) {
+        alert("Completá todos los campos");
+        return;
+      }
+
+      const mensaje = `¡Hola! Quiero reservar:
+- Nombre: ${nombre}
+- Fecha: ${fecha}
+- Dirección: ${direccion}
+- Hora: ${hora}
+✅ Estoy al tanto de las condiciones y el pago anticipado.`;
+
+      const telefono = "5493517885172"; // Reemplazá con tu número de WhatsApp
+      const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
