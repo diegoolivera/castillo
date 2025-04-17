@@ -279,9 +279,19 @@
             background-color: #f0f0f0;
         }
 
+        .product-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .product-content {
             padding: 1rem;
         }
+
 
         /* Testimonios */
         .testimonials {
@@ -548,11 +558,11 @@
         }
 
         .gradiente-texto {
-  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #d057db);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #d057db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
 
 
 
@@ -606,42 +616,10 @@
     <main>
         <!-- Hero Section -->
         <section class="hero" style="padding: 0 1rem;">
-            <!-- <div class="container hero-content">
-                <h1>¡Diversión Garantizada para tu Evento Infantil!</h1>
-                <p class="text-muted">
-                    Castillos inflables, juegos y más para hacer inolvidable la fiesta de tus pequeños
-                </p>
-                <div class="hero-buttons">
-                    <a href="#productos" class="btn btn-primary btn-lg btn-icon">
-                        <span>🎉</span>
-                        <span>Ver Catálogo</span>
-                    </a>
-                    <a href="#contacto" class="btn btn-outline btn-lg">
-                        Solicitar Presupuesto
-                    </a>
-                </div>
-                <img src="https://via.placeholder.com/800x600" alt=" va imagen de Castillo " class="hero-image">
-            </div> -->
-            <!-- <div class="container hero-content">
-                <div class="mf-titulo">MOMENTOS</div>
-                <div class="mf-contenedor">
-                    <div class="mf-letra mf-colores">F</div>
-                    <div class="mf-letra mf-verde">E</div>
-                    <div class="mf-letra mf-rosa">L</div>
-                    <div class="mf-letra mf-naranja">I</div>
-                    <div class="mf-letra mf-azul">C</div>
-                    <div class="mf-letra mf-rojo">E</div>
-                    <div class="mf-letra mf-naranja">S</div>
-                </div>
-                <div class="mf-subtitulo">ALQUILER DE JUEGOS</div>
-            </div> -->
 
-            <!-- <div class="hero-content">
-                <img src="./img/momentosFelices.jpeg" alt="logo momentos felices">
-            </div> -->
 
             <div class="hero-content">
-                <img src="./img/momentosFelices.jpeg" alt="logo momentos felices">
+                <img src="./img/logPrincipal.JPG" alt="logo momentos felices">
                 <div class="hero-text"
                     style="display: flex;align-items: center; justify-content: center; flex-direction: column;">
                     <h1 style="font-family: cursive;font-weight: 300;">¡Diversión Garantizada para tu Evento Infantil!
@@ -649,11 +627,13 @@
                     <p class="text-muted">Castillos inflables, juegos y más para hacer inolvidable la fiesta de tus
                         pequeños</p>
                     <div class="hero-buttons">
-                        <a href="/catalogo.html" class="btn btn-primary btn-lg" style="background-color: #87CEEB ;">🎉 Ver Catálogo</a>
-                        <a href="/reserva.html" class="btn btn-outline btn-lg" style="border: 1px solid #87CEEB ;">Solicitar Reserva</a>
+                        <a href="/catalogo.html" class="btn btn-primary btn-lg" style="background-color: #87CEEB ;">🎉
+                            Ver Catálogo</a>
+                        <a href="/reserva.html" class="btn btn-outline btn-lg"
+                            style="border: 1px solid #87CEEB ;">Solicitar Reserva</a>
                     </div>
-                </div>
-            
+                </div> 
+
             </div>
 
         </section>
@@ -662,7 +642,7 @@
         <section class="about" style="padding: 1rem 0;">
             <div class="container">
                 <h2>Quiénes Somos</h2>
-                <div class="about-content" >
+                <div class="about-content">
                     <p>
                         En <strong class="gradiente-texto">Momentos felices</strong> nos dedicamos a crear
                         momentos
@@ -673,7 +653,7 @@
                         experiencia inolvidable, siempre con la máxima seguridad y calidad.
                     </p>
                 </div>
-                
+
                 <section class="destacado" style="padding: 1rem 0;">
                     <div class="container">
                         <h2>¿Por qué elegir nuestros juegos?</h2>
@@ -692,9 +672,10 @@
                             <div class="beneficio">
                                 <div class="iconoDestacado">📍</div>
                                 <h3>Cobertura</h3>
-                                <p>Servicio en toda la ciudad y alrededores para llevar diversión donde la necesites.</p>
+                                <p>Servicio en toda la ciudad y alrededores para llevar diversión donde la necesites.
+                                </p>
                             </div>
-                           
+
                         </div>
                     </div>
                 </section>
@@ -713,54 +694,55 @@
                 <div class="products-grid">
                     <div class="product-card">
                         <div class="product-image">
-                            <!-- Placeholder para imagen -->
+                            <img src="./img/castilloBlanco/IMG_0071.JPG" alt="">
                         </div>
                         <div class="product-content">
                             <h3>Castillos Inflables</h3>
                             <p class="text-muted">
                                 Diferentes tamaños y temáticas para todas las edades y espacios.
                             </p>
-                           
+
                         </div>
                     </div>
 
                     <div class="product-card">
                         <div class="product-image">
-                            <!-- Placeholder para imagen -->
+                            <img src="./img/peloteroSoft/WhatsApp Image 2025-04-16 at 10.34.51 PM (2).jpeg" alt="">
                         </div>
                         <div class="product-content">
-                            <h3>Toboganes Acuáticos</h3>
+                            <h3>pelotero soft</h3>
                             <p class="text-muted">
-                                Perfectos para días calurosos y fiestas de verano.
+                                Un espacio de juegos con tobogán y pelotas de colores para los niños.
                             </p>
-                            
+
                         </div>
                     </div>
 
                     <div class="product-card">
                         <div class="product-image">
-                            <!-- Placeholder para imagen -->
+                            <img src="./img/MiniLivingKids/WhatsApp Image 2025-04-16 at 10.36.41 PM (2).jpeg" alt="">
                         </div>
                         <div class="product-content">
-                            <h3>Juegos Interactivos</h3>
+                            <h3>Mini living Kids</h3>
                             <p class="text-muted">
-                                Actividades divertidas para entretener a niños de todas las edades.
+                                Mesas y sillas infantiles con temáticas divertidas, para que cada niño tenga su lugar especial.
                             </p>
-                           
+
                         </div>
                     </div>
 
-                    
+
                 </div>
 
-                <div class="text-center" style="margin-top: 2.5rem; " >
-                    <a href="/catalogo.html" class="btn btn-primary btn-lg" style="background-color: #87CEEB ;">🎉 Ver Catálogo Completo</a>
+                <div class="text-center" style="margin-top: 2.5rem; ">
+                    <a href="/catalogo.html" class="btn btn-primary btn-lg" style="background-color: #87CEEB ;">🎉 Ver
+                        Catálogo Completo</a>
                 </div>
             </div>
         </section>
 
-    
-       
+
+
     </main>
 
     <!-- Footer -->
@@ -775,16 +757,16 @@
                     <span class="mf-follow-us">📢 ¡Síguenos en nuestras redes!</span>
                 </div>
                 <div class="mf-social-media">
-                    <a href="https://www.instagram.com/momentosfelices_juegos?igsh=MW1wZHRqY2o1YzVnZQ%3D%3D&utm_source=qr" target="_blank" class="mf-social-icon mf-instagram"
-                        aria-label="Instagram">
+                    <a href="https://www.instagram.com/momentosfelices_juegos?igsh=MW1wZHRqY2o1YzVnZQ%3D%3D&utm_source=qr"
+                        target="_blank" class="mf-social-icon mf-instagram" aria-label="Instagram">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="https://www.facebook.com/profile.php?id=61574767354893&mibextid=wwXIfr&rdid=M3B9XFxgnPZAqpUt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AQbBd1qpd%2F%3Fmibextid%3DwwXIfr#" target="_blank" class="mf-social-icon mf-facebook"
-                        aria-label="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=61574767354893&mibextid=wwXIfr&rdid=M3B9XFxgnPZAqpUt&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AQbBd1qpd%2F%3Fmibextid%3DwwXIfr#"
+                        target="_blank" class="mf-social-icon mf-facebook" aria-label="Facebook">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@momentofelices_juegos?_t=ZM-8vLiu9fuX7V&_r=1" target="_blank" class="mf-social-icon mf-facebook"
-                        aria-label="Facebook">
+                    <a href="https://www.tiktok.com/@momentofelices_juegos?_t=ZM-8vLiu9fuX7V&_r=1" target="_blank"
+                        class="mf-social-icon mf-facebook" aria-label="Facebook">
                         <i class="fa-brands fa-tiktok"></i>
                     </a>
                 </div>

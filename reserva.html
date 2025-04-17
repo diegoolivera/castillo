@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reserva</title>
   <link rel="stylesheet" href="reserva.css" />
 </head>
+
 <body>
   <div class="card-reserva">
     <h1>Reserva tu evento 🎉</h1>
@@ -53,13 +55,60 @@
     </ul>
   </div>
 
+  <fieldset class="articulos-fieldset">
+    <legend>✅ ¿Qué artículos querés alquilar?</legend>
+    <div class="articulos-grid">
+
+      <label class="articulo-card">
+        <input type="checkbox" name="articulos" value="Castillo blanco" />
+        <img src="./img/castilloBlanco/IMG_0371.JPG" alt="Castillo blanco" />
+        <span>Castillo blanco</span>
+      </label>
+
+      <label class="articulo-card">
+        <input type="checkbox" name="articulos" value="Castillo blanco premium" />
+        <img src="./img/castilloBlancoPremium/4A76B383-7D53-4C2F-BC8E-18178DD8901E.jpg" alt="Castillo blanco premium" />
+        <span>Castillo blanco premium</span>
+      </label>
+
+      <label class="articulo-card">
+        <input type="checkbox" name="articulos" value="Mini living kids" />
+        <img src="./img/MiniLivingKids/WhatsApp Image 2025-04-16 at 10.36.41 PM (2).jpeg "alt="Mini living kids" />
+        <span>Mini living kids</span>
+      </label>
+
+      <label class="articulo-card">
+        <input type="checkbox" name="articulos" value="Pelotero soft" />
+        <img src="./img/peloteroSoft/WhatsApp Image 2025-04-16 at 10.34.50 PM (1).jpeg" alt="Pelotero soft" />
+        <span>Pelotero soft</span>
+      </label>
+
+      <label class="articulo-card">
+        <input type="checkbox" name="articulos" value="plaza blanda Montessori" />
+        <img src="./img/plaza/IMG_0375.JPG" alt="plaza blanda Montessori" />
+        <span>plaza blanda Montessori</span>
+      </label>
+
+
+    </div>
+  </fieldset>
+
+
   <div class="acciones-reserva">
-    <button class="btn-confirmar" onclick="enviarReserva()">Enviar Reserva</button>
-    <button class="btn-cancelar" onclick="window.location.href='index.html'">Cancelar</button>
+    <button class="btn-confirmar" style="background-color: #87CEEB ;" onclick="enviarReserva()">Enviar Reserva</button>
+    <button class="btn-cancelar" style="border: 1px solid #87CEEB ; background-color: white; color: black;"
+      onclick="window.location.href='index.html'">Cancelar</button>
   </div>
 
   <script>
+
+
     function enviarReserva() {
+
+      const articulosSeleccionados = Array.from(document.querySelectorAll('input[name="articulos"]:checked'))
+        .map(el => el.value)
+        .join(', ');
+
       const nombre = document.getElementById('nombre').value;
       const fecha = document.getElementById('fecha').value;
       const direccion = document.getElementById('direccion').value;
@@ -72,9 +121,10 @@
 
       const mensaje = `¡Hola! Quiero reservar:
 - Nombre: ${nombre}
-- Fecha: ${fecha}
-- Dirección: ${direccion}
-- Hora: ${hora}
+- Fecha Evento: ${fecha}
+- Dirección Evento: ${direccion}
+- Hora Evento: ${hora}
+- Artículos: ${articulosSeleccionados}
 ✅ Estoy al tanto de las condiciones y el pago anticipado.`;
 
       const telefono = "5493517885172"; // Reemplazá con tu número de WhatsApp
@@ -83,4 +133,5 @@
     }
   </script>
 </body>
+
 </html>
