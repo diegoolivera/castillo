@@ -604,6 +604,26 @@ footer {
     border-bottom: 2px solid #ffaa00;
   }
   
+
+  .card5-variants {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.95rem;
+  }
+  
+  .card5-variants li {
+    margin-bottom: 6px;
+    background-color: #f8f8f8;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border-left: 4px solid #6ec1e4;
+  }
+  
+  .card5-variants strong {
+    color: #2a9d8f;
+  }
+  
   
   
 
