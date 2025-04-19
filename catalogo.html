@@ -257,33 +257,104 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        // Galería Modal
+        document.addEventListener('DOMContentLoaded', function() {
             // Inicializamos cada slider por separado
             const sliders = document.querySelectorAll('.card5-slider');
-
+            
+            // Creamos el modal
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <span class="close">&times;</span>
+                <span class="modal-nav modal-prev">❮</span>
+                <span class="modal-nav modal-next">❯</span>
+                <div class="modal-content">
+                    <img class="modal-img" src="" alt="">
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            // Variables para controlar la galería modal
+            let currentModalGallery = [];
+            let currentModalIndex = 0;
+            
+            // Función para abrir el modal
+            function openModal(images, index) {
+                currentModalGallery = images;
+                currentModalIndex = index;
+                updateModalImage();
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Función para actualizar la imagen del modal
+            function updateModalImage() {
+                const modalImg = modal.querySelector('.modal-img');
+                modalImg.src = currentModalGallery[currentModalIndex].src;
+                modalImg.alt = currentModalGallery[currentModalIndex].alt;
+            }
+            
+            // Cerrar modal al hacer clic en la X
+            modal.querySelector('.close').addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Navegación del modal
+            modal.querySelector('.modal-prev').addEventListener('click', function() {
+                currentModalIndex = (currentModalIndex - 1 + currentModalGallery.length) % currentModalGallery.length;
+                updateModalImage();
+            });
+            
+            modal.querySelector('.modal-next').addEventListener('click', function() {
+                currentModalIndex = (currentModalIndex + 1) % currentModalGallery.length;
+                updateModalImage();
+            });
+            
+            // Cerrar modal al hacer clic fuera de la imagen
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Asignar eventos a todas las imágenes para abrir el modal
+            sliders.forEach(slider => {
+                const images = slider.querySelectorAll('.card5-slides img');
+                images.forEach((img, index) => {
+                    img.style.cursor = 'pointer';
+                    img.addEventListener('click', function() {
+                        openModal(Array.from(images), index);
+                    });
+                });
+            });
+            
+            // Sliders individuales (tu código existente)
             sliders.forEach((slider, index) => {
                 let slideIndex = 0;
                 const slides = slider.querySelectorAll('.card5-slides img');
                 const prevBtn = slider.querySelector('.prev');
                 const nextBtn = slider.querySelector('.next');
-
+                
                 function showSlide(n) {
                     if (n >= slides.length) slideIndex = 0;
                     if (n < 0) slideIndex = slides.length - 1;
-
+                    
                     slides.forEach((slide, i) => {
                         slide.style.display = (i === slideIndex) ? 'block' : 'none';
                     });
                 }
-
+                
                 function changeSlide(n) {
                     slideIndex += n;
                     showSlide(slideIndex);
                 }
-
+                
                 // Mostrar solo la primera slide al inicio
                 showSlide(slideIndex);
-
+                
                 if (prevBtn) prevBtn.addEventListener('click', () => changeSlide(-1));
                 if (nextBtn) nextBtn.addEventListener('click', () => changeSlide(1));
             });
